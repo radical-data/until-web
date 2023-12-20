@@ -1,15 +1,20 @@
 @import '@fontsource-variable/noto-sans-arabic';
 @import '@fontsource-variable/source-sans-3';
 
+:root {
+    --off-black: #101010;
+    --off-white: #f4f4f4;
+    --green: #53B96A;
+  }
+
 body {
     max-width: 650px;
     margin: 10px auto;
     padding: 0 10px;
-    /* font-size: 18px; */
     line-height: 1.5;
-    font-family: "Source Sans 3 Variable", -apple-system, sans-serif;
-    color: #f4f4f4;
-    background: #101010;
+    font-family: 'Source Sans 3 Variable', -apple-system, sans-serif;
+    color: var(--off-white);
+    background: var(--off-black);
 }
 
 h1,
@@ -28,17 +33,15 @@ a {
 }
 
 a:link {
-    /* color: #cacaca; */
-    color: #f4f4f4;
+    color: var(--off-white);
 }
 
 a:visited {
-    /* color: #9a9a9a; */
-    color: #f4f4f4;
+    color: var(--off-white);
 }
 
 a:hover {
-    color: #53B96A;
+    color: var(--green);
 }
 
 section+section::before {
@@ -46,7 +49,7 @@ section+section::before {
     display: block;
     width: 60%;
     height: 1px;
-    background-color: #f4f4f4;
+    background-color: var(--off-white);
     margin: 0 auto;
 }
 
@@ -65,21 +68,21 @@ section+section::before {
     text-align: center;
 }
 
-.statement {
-    font-size: 1.25rem;
-    font-style: italic;
-    font-weight: 400;
-    padding-left: 1.5rem;
-}
-
-.statement .number {
-    font-weight: 700;
-}
-
 .invite {
-    text-align: center;
+    text-align: right;
 }
 
 .focus {
     font-weight: 700;
+}
+
+input {
+    background: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    border: 1px solid #f4f4f4;
+    border-radius: 99999rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.2rem;
 }
