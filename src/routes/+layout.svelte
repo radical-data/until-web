@@ -1,9 +1,9 @@
 <script>
-	import NavBar from "$lib/NavBar.svelte";
-
+	import NavBar from '$lib/NavBar.svelte';
+    import Footer from '$lib/Footer.svelte';
+	import '../app.css';
 </script>
+
 <NavBar></NavBar>
-<slot></slot>
-<style>
-    @import "../app.css";
-</style>
+<slot />
+<Footer></Footer>
