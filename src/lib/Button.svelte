@@ -19,4 +19,8 @@
 		display: inline-flex;
         text-decoration: none;
 	}
+	img {
+		width: 26px;
+		height: 16px;
+	}
 </style>
