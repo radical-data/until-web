@@ -86,3 +86,22 @@ input {
     padding-inline: 0.5rem;
     padding-block: 0.2rem;
 }
+
+.deaths-list {
+    line-height: 1.5rem;
+}
+
+.deaths-list .name {
+    font-weight: 600;
+}
+
+.deaths-list .age {
+    font-weight: 300;
+    font-style: italic;
+}
+.deaths-list a {
+    text-decoration: none;
+}
+.deaths-list a:hover {
+    text-decoration: underline;
+}
