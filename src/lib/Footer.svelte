@@ -57,12 +57,13 @@
 
 	.social-media {
 		display: flex;
-		gap: 25px;
+		/* gap: 15px; */
 	}
 
 	.social-media img {
 		width: 20px;
 		height: 20px;
+		padding: 10px
 	}
 
 	.footer-description {
