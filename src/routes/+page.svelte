@@ -25,7 +25,9 @@
 	<article>
 		<section>
 			<p class="statement">
-				<span class="highlight">Until</span> remembers <span class="highlight">{new Intl.NumberFormat().format($deaths.length)}</span> of the
+				<span class="highlight">Until</span> remembers
+				<span class="highlight">{new Intl.NumberFormat().format($deaths.length)}</span>
+				of the
 				<span class="highlight">{new Intl.NumberFormat().format(totalDeathEstimate)}</span> killed.
 			</p>
 			<p class="deaths-list">
