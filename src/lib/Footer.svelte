@@ -1,6 +1,8 @@
 <script>
 	import instagramIcon from '$lib/assets/instagram-icon.svg';
 	import tiktokIcon from '$lib/assets/tiktok-icon.svg';
+	import twitterIcon from '$lib/assets/twitter-icon.svg';
+	import githubIcon from '$lib/assets/github-icon.svg';
     const socialMediaIcons = [
         {
             platform: 'Instagram',
@@ -11,6 +13,16 @@
             platform: 'TikTok',
             href: 'https://www.tiktok.com/@untildatabase',
             src: tiktokIcon,
+        },
+		{
+            platform: 'Twitter',
+            href: 'https://twitter.com/untildatabase',
+            src: twitterIcon,
+        },
+		{
+            platform: 'GitHub',
+            href: 'https://github.com/radical-data/until-web',
+            src: githubIcon,
         },
     ];
 </script>
@@ -45,7 +57,7 @@
 
 	.social-media {
 		display: flex;
-		gap: 7px;
+		gap: 25px;
 	}
 
 	.social-media img {
