@@ -3,6 +3,8 @@
 	import LastUpdated from '$lib/LastUpdated.svelte';
 	import { deaths } from '$lib/stores';
 	import { getRandomSubset, toKebabCase } from '$lib/utils';
+	export let data;
+	$: deaths.set(data.props.deathsData);
 	$: deathsToShow = getRandomSubset($deaths, 30);
 	let totalDeathEstimate = 19667;
 </script>
