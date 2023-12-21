@@ -36,6 +36,7 @@
   "dependencies": {
     "@fontsource-variable/noto-sans-arabic": "^5.0.8",
     "@fontsource-variable/source-sans-3": "^5.0.18",
-    "fuzzysort": "^2.0.4"
+    "fuzzysort": "^2.0.4",
+    "nocodb-sdk": "^0.202.10"
   }
 }
