@@ -1,11 +1,12 @@
 import { NOCODB_BASE } from "$env/static/private";
 import { nocodb_api } from "$lib/nocodb_api";
-import { getRandomSubset, toKebabCase } from "./utils";
+import { getRandomSubset } from "./utils";
 
 async function fetchPage(page: number) {
     const options = {
         limit: 1000,
         offset: (page - 1) * 1000,
+        fields: ["name_en", "age", "gender"]
     };
 
     try {
