@@ -1,6 +1,7 @@
-<script>
-	import LastUpdated from '$lib/LastUpdated.svelte';
-</script>
+<svelte:head>
+	<title>About Until · Preserving Human Stories from Gaza's Conflict</title>
+	<meta name="description" content="Learn about Until, a community project by Radical Data, dedicated to documenting the lives behind the numbers in Gaza's conflict. Our approach combines volunteer contributions, source integration, and testimonials to honor each individual's story. Discover our journey, methodology, and how you can be a part of the project." />
+</svelte:head>
 
 <h1><span class="arabic">حول</span><br />About</h1>
 <p class="subtitle">
@@ -28,7 +29,7 @@
 			<ol>
 				<li>
 					<span class="focus">Submit sources</span>: Use the
-					<a href="source-submission">source submission form</a> to share sources (e.g. news articles,
+					<a href="https://wjtikx0v.nocodb.com/#/nc/form/5fd4112d-b5d0-487d-aaa2-9559710858c6">source submission form</a> to share sources (e.g. news articles,
 					social media updates). These will be integrated into the database.
 				</li>
 				<li>
@@ -38,7 +39,7 @@
 			</ol>
 			<p>
 				If you have other skills that could be helpful (design, translation, programming, social
-				media support etc.), please get in touch through the <a href="contribution-form"
+				media support etc.), please get in touch through the <a href="https://wjtikx0v.nocodb.com/#/nc/form/83775246-bd27-48f0-ba98-e604f9f5f79e"
 					>contribution form</a
 				>.
 			</p>
@@ -76,11 +77,3 @@
 		</section>
 	</article>
 </main>
-
-<style>
-	.last-updated {
-		display: flex;
-		justify-content: center;
-		margin-top: 1rem;
-	}
-</style>
