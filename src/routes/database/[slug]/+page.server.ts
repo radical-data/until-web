@@ -1,10 +1,10 @@
 import { getDeathById } from "$lib/fetchById";
-import { deaths } from "$lib/stores";
+import { fetchDeathsData } from "$lib/fetchData.js";
 import { error } from "@sveltejs/kit";
-import { get } from "svelte/store";
 
 export async function load({ params }) {
-    const post = await getDeathById(params.slug, get(deaths))
+    const deathsData = await fetchDeathsData();
+    const post = await getDeathById(params.slug, deathsData)
     if (!post) {
         throw error(404, 'Page Not Found');
     }
