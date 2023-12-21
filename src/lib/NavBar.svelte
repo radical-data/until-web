@@ -4,10 +4,10 @@
 		<li><a href="/database">Database</a></li>
 		<li><a href="/about">About</a></li>
 	</ul>
-	<ul>
+	<!-- <ul>
 		<li><a href="/en">en</a></li>
 		<li><a href="/ar"><span class="arabic">العربية</span></a></li>
-	</ul>
+	</ul> -->
 </nav>
 
 <style>

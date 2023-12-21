@@ -1,5 +1,5 @@
 import { getDeathById } from "$lib/fetchById";
-import { deaths } from "$lib/stores";
+import { deaths } from "$lib/stores.js";
 import { error } from "@sveltejs/kit";
 import { get } from "svelte/store";
 
