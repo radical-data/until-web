@@ -2,6 +2,7 @@
 	import { toKebabCase } from '$lib/utils';
 	import fuzzysort from 'fuzzysort';
 	import { deaths } from '$lib/stores';
+	import { _, locale } from 'svelte-i18n';
 
 	let searchQuery = '';
 	let options = {
@@ -22,28 +23,28 @@
 </script>
 
 <svelte:head>
-	<title>Database · Until · Preserving Human Stories from Gaza's Conflict</title>
+	<title>{$_('pages.database')} · {$_('site.title')} · {$_('site.goal')}</title>
 	<meta
 		name="description"
-		content="Explore the heart of Until's mission in our database. Here, find the names, ages, images and personal stories of Palestinians killed during Israel's assault on Gaza. Each entry is a tribute to an individual life, beyond just numbers. Our database is a testament to their humanity and a call to remember each unique story."
+		content="{$_('database.description')}"
 	/>
 </svelte:head>
 
 <main>
 	<article>
 		<section>
-			<h1><span class="arabic">ريثما</span><br />Until</h1>
+			<h1><span class="arabic">ريثما</span><br />{$_('database.title')}</h1>
 			<div class="search-container">
 				<input
 					type="text"
 					bind:value={searchQuery}
-					placeholder="Search names"
+					placeholder="{$_('database.search')}"
 					on:input={filterDeaths}
 				/>
 			</div>
 			<p class="deaths-list">
 				{#each filteredDeaths as death, index}
-					<a href={'database/' + toKebabCase(death.name_en)}>
+					<a href={`database/${toKebabCase(death.name_en)}`}>
 						<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
 					>{index !== filteredDeaths.length - 1 ? ' · ' : ''}
 				{/each}
