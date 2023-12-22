@@ -1,0 +1,59 @@
+{
+  "about": {
+    "contributing": "Contributing",
+    "description": "Learn about Until, a community project by Radical Data, dedicated to documenting the lives behind the numbers in Gaza's conflict. Our approach combines volunteer contributions, source integration, and testimonials to honor each individual's story. Discover our journey, methodology, and how you can be a part of the project.",
+    "goal": "The ongoing genocide seeks to dehumanise the Palestinian people by reducing them to numbers, anonymous bodies and mass graves. Until is a community effort to collect names, images and stories of the people who have been killed. The database gives name, singularity, and humanity to each person, showing that each death in these statistics are people with lives, loves and joy.",
+    "methodology": "Methodology",
+    "methodology_description": "Until uses an iterative approach to build the database. People can add sources which are sorted through a hybrid process of automation and moderation. Through this, we combine information from various sources to build as detailed picture as possible.\nWe also invite testimonials and images to give a more complete picture of each of the people in the database.",
+    "title": "About Until",
+    "who_we_are": "Who we are",
+    "who_we_are_description": "Until is a community project led by Radical Data with friends and volunteers. The project started a few weeks ago as a way to not be passive while people’s agency is taken away. This is an ongoing process of learning. We started this with experience of building similar databases of mass killings in the past, particularly during the dictatorships of Chile and Argentina. Usually, our projects are built collaboratively with the community they are about. Due to internet shutdowns, we are learning how to do this with a diverse collective. This is the first time we are using the approach in a crisis in the present. That has some challenges and we're learning how to deal with them as we go."
+  },
+  "contributing": {
+    "description": "As a community project, Until is built by volunteers like you. There are 2 main ways you can support:",
+    "miscellaneous": "If you have other skills that could be helpful (design, translation, programming, social media support etc.), please get in touch through the contribution form.",
+    "way1": "Submit sources: Use the source submission form to share sources (e.g. news articles, social media updates). These will be integrated into the database.",
+    "way2": "Share: To be useful, Until needs to be used. Please share it with your family, friends and representatives."
+  },
+  "database": {
+    "description": "Explore the heart of Until's mission in our database. Here, find the names, ages, images and personal stories of Palestinians killed during Israel's assault on Gaza. Each entry is a tribute to an individual life, beyond just numbers. Our database is a testament to their humanity and a call to remember each unique story.",
+    "search": "Search names",
+    "title": "Until Database"
+  },
+  "home": {
+    "database_link": "Go to database",
+    "database_link_description": "For their stories",
+    "last_updated": "Last updated",
+    "statement": "Until remembers {number_in_database} of the {total_killed} killed."
+  },
+  "individual": {
+    "age": "Age",
+    "description": "{name} was killed in the Israeli assault on Gaza. Here, you can hear their story, leave a testimonial or share a photo.",
+    "gender": "Gender",
+    "nationality": "Nationality",
+    "photos": "Photos",
+    "share_photo": "Share a photo of {name}",
+    "share_photos": "",
+    "share_testimonial": "Write a testimonial for {name}",
+    "share_testimonials": "",
+    "testimonials": "Testimonials",
+    "title": "A digital memorial for {name}"
+  },
+  "pages": {
+    "about": "About",
+    "database": "Database",
+    "home": "Home"
+  },
+  "site": {
+    "description": "A community-led database of Palestinians killed in the Israeli assault on Gaza",
+    "description_with_title": "Until is a community-led database of Palestinians killed in the Israeli assault on Gaza.",
+    "goal": "Preserving Human Stories from Gaza's Conflict",
+    "long_description": "Until is a community-led database of Palestinians killed in the Israeli assault on Gaza. This database humanises each individual beyond numbers, offering names, images, and stories. Contribute by submitting sources, images or testimonials.",
+    "short_description": "A community database of killings in Gaza",
+    "title": "Until"
+  },
+  "utils": {
+    "time_am": "am",
+    "time_pm": "pm"
+  }
+}

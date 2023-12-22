@@ -1,47 +1,64 @@
+<script lang="ts">
+	import { _, locale } from 'svelte-i18n';
+	import { languages } from './i18n';
+	import { page } from '$app/stores';
+	import type { Page } from '@sveltejs/kit';
+	function switchLangUrl(newLang: string, currentPage: Page) {
+		let currentPath = currentPage.url.pathname;
+		const currentLang = currentPage.params.lang || 'en';
+		const langRegex = new RegExp(`^/${currentLang}(\/|$)`);
+		return currentPath.replace(langRegex, `/${newLang}$1`);
+	}
+</script>
+
 <nav>
 	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/database">Database</a></li>
-		<li><a href="/about">About</a></li>
+		<li><a href="/{$locale}">{$_('pages.home')}</a></li>
+		<li><a href="/{$locale}/database">{$_('pages.database')}</a></li>
+		<li><a href="/{$locale}/about">{$_('pages.about')}</a></li>
 	</ul>
-	<!-- <ul>
-		<li><a href="/en">en</a></li>
-		<li><a href="/ar"><span class="arabic">العربية</span></a></li>
-	</ul> -->
+	<ul>
+		{#each languages as language}
+			<li>
+				<a href={switchLangUrl(language.code, $page)}>
+					<span class={language.code === 'ar' ? 'arabic' : ''}>{language.name}</span>
+				</a>
+			</li>
+		{/each}
+	</ul>
 </nav>
 
 <style>
 	nav {
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
-  
+
 	ul {
-	  list-style: none;
-	  padding: 0;
-	  margin: 0;
-	  display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
 	}
-  
+
 	ul:first-child {
-	  margin-right: auto; /* Pushes the first ul to the left */
+		margin-right: auto;
 	}
-  
+
 	a {
-	  text-decoration: none;
-	  color: white;
-	  display: block;
-	  padding: 0px 10px;
-	  margin: 0;
-	  transition: all 0.3s ease;
-	  border-radius: 9999px;
-	  font-weight: 600;
+		text-decoration: none;
+		color: white;
+		display: block;
+		padding: 0px 10px;
+		margin: 0;
+		transition: all 0.3s ease;
+		border-radius: 9999px;
+		font-weight: 600;
 	}
-  
+
 	a:hover {
-	  background-color: #f4f4f4;
-	  color: #101010;
+		background-color: #f4f4f4;
+		color: #101010;
 	}
-  </style>
-  
+</style>

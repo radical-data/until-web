@@ -1,10 +1,6 @@
-import { fetchDeathsData } from '$lib/fetchData';
+import { defaultLocale } from '$lib/i18n';
+import { redirect } from '@sveltejs/kit';
 
-export async function load() {
-    console.log("Fetching data...")
-    const deathsData = await fetchDeathsData();
-    console.log("Fetched")
-    return {
-        props: { deathsData }
-    };
+export function load() {
+	redirect(301, defaultLocale);
 }

@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
 	import instagramIcon from '$lib/assets/instagram-icon.svg';
 	import tiktokIcon from '$lib/assets/tiktok-icon.svg';
 	import twitterIcon from '$lib/assets/twitter-icon.svg';
@@ -31,7 +32,7 @@
 	<div class="footer-content">
 		<div class="footer-description">
 			<p>
-				Until is a community-led database of Palestinians killed in the Israeli assault on Gaza.
+				{$_('site.description_with_title')}
 			</p>
 		</div>
 		<div class="social-media">
