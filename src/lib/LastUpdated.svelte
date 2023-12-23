@@ -1,15 +1,17 @@
 <script lang="ts">
-	import { _, locale } from "svelte-i18n";
+	import { _, locale } from 'svelte-i18n';
 	export let lastUpdatedTime: Date;
 	function toISODateTimeString(date: Date): string {
 		const isoDateTimeString = date.toISOString().slice(0, 16);
 		return isoDateTimeString.replace('T', ' ');
 	}
 
+	let amOrPm = 'pm';
+
 	function toTimeFormat(date: Date, locale: string | null | undefined): string {
 		const hours = date.getHours();
 		const minutes = date.getMinutes();
-		const amOrPm = hours >= 12 ? $_('utils.time_pm') : $_('utils.time_am');
+		amOrPm = hours >= 12 ? $_('utils.time_pm') : $_('utils.time_am');
 		const hourFormat = hours % 12 || 12;
 		const timeString = `${hourFormat}:${minutes.toString().padStart(2, '0')}${amOrPm}`;
 		return timeString;
@@ -20,7 +22,9 @@
 	<div class="text">
 		<p>{$_('home.last_updated')}</p>
 		<p>
-			<time datetime={toISODateTimeString(lastUpdatedTime)}>{toTimeFormat(lastUpdatedTime, $locale)}</time>
+			<time datetime={toISODateTimeString(lastUpdatedTime)}
+				>{toTimeFormat(lastUpdatedTime, $locale)}</time
+			>
 		</p>
 	</div>
 	<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">

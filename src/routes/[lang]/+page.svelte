@@ -13,6 +13,13 @@
 <svelte:head>
 	<title>{$_('site.title')} · {$_('site.short_description')}</title>
 	<meta name="description" content={$_('site.long_description')} />
+	<meta property="og:title" content="{$_('site.title')} · {$_('site.short_description')}" />
+	<meta property="og:description" content={$_('site.long_description')} />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://until.radicaldata.org" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{$_('site.title')} · {$_('site.short_description')}" />
+	<meta name="twitter:description" content={$_('site.long_description')} />
 </svelte:head>
 
 <h1><span class="arabic">ريثما</span><br />Until</h1>
