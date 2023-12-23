@@ -15,7 +15,7 @@
 	<meta name="description" content={$_('site.long_description')} />
 </svelte:head>
 
-<h1><span class="arabic">ريثما</span><br />{$_('site.title')}</h1>
+<h1><span class="arabic">ريثما</span><br />Until</h1>
 <p class="subtitle">
 	{$_('site.description')}
 </p>
