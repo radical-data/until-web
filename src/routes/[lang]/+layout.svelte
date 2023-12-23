@@ -4,7 +4,7 @@
 	import '../../app.css';
 	import { browser } from '$app/environment';
 	import '$lib/i18n';
-	import { locale, waitLocale } from 'svelte-i18n';
+	import { _, locale, waitLocale } from 'svelte-i18n';
 
 	export const LayoutLoad: any = async () => {
 		if (browser) {
@@ -17,5 +17,7 @@
 </script>
 
 <NavBar></NavBar>
-<slot />
+<div dir={$_('direction')}>
+	<slot />
+</div>
 <Footer></Footer>

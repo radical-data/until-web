@@ -19,11 +19,11 @@
 <p><span class="variable">{$_('individual.gender')}:</span> {capitaliseFirstLetter(data.gender)}</p>
 
 <h2>{$_('individual.testimonials')}</h2>
-<Button href="https://wjtikx0v.nocodb.com/#/nc/form/0d902ef3-add1-4659-83c0-dcd8a41bbadc"
+<Button href={$_('form.testimonial')}
 	>{$_('individual.share_testimonial', { values: { name: first_name }})}</Button
 >
 <h2>{$_('individual.photos')}</h2>
-<Button href="https://wjtikx0v.nocodb.com/#/nc/form/028c69ba-425e-49bf-af68-fc9d4e39e59c"
+<Button href={$_('form.photo')}
 	>{$_('individual.share_photo', { values: { name: first_name }})}</Button
 >
 
