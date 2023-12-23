@@ -1,12 +1,14 @@
-<script>
-	import { _ } from "svelte-i18n";
+<script lang="ts">
+	import Button from '$lib/Button.svelte';
+	import { _, locale } from 'svelte-i18n';
 </script>
+
 <svelte:head>
 	<title>{$_('about.title')} · {$_('site.goal')}</title>
-	<meta name="description" content="{$_('about.description')}" />
+	<meta name="description" content={$_('about.description')} />
 </svelte:head>
 
-<h1><span class="arabic">حول</span><br />{$_('about.title')}</h1>
+<h1><span class="arabic">حول</span><br />About Until</h1>
 <p class="subtitle">
 	{$_('site.description_with_title')}
 	<!-- Until is a community-led database of Palestinians killed in the Israeli assault on Gaza. -->
@@ -34,15 +36,17 @@
 			</p>
 			<ol>
 				<li>
-					{$_('contributing.way1')}
+					{$_('contributing.sources')}
 					<!-- <span class="focus">Submit sources</span>: Use the
 					<a href="https://wjtikx0v.nocodb.com/#/nc/form/5fd4112d-b5d0-487d-aaa2-9559710858c6"
 						>source submission form</a
 					> to share sources (e.g. news articles, social media updates). These will be integrated into
 					the database. -->
+					<Button href={$_('form.source')}></Button>
 				</li>
+				<li>{$_('contributing.testimonial')}<Button href={$_('form.testimonial')}></Button></li>
 				<li>
-					{$_('contributing.way2')}
+					{$_('contributing.share')}
 					<!-- <span class="focus">Share</span>: To be useful, <span class="until">Until</span> needs to be
 					used. Please share it with your family, friends and representatives. -->
 				</li>
@@ -54,6 +58,7 @@
 					href="https://wjtikx0v.nocodb.com/#/nc/form/83775246-bd27-48f0-ba98-e604f9f5f79e"
 					>contribution form</a
 				>. -->
+				<Button href={$_('form.contact')}></Button>
 			</p>
 		</section>
 		<section>
@@ -72,6 +77,13 @@
 			<p>
 				{$_('about.who_we_are_description')}
 			</p>
+		</section>
+		<section>
+			<h2>{$_('about.contact')}</h2>
+			<p>
+				{$_('about.contact_description')}
+			</p>
+			<Button href={$_('form.contact')}>{$_('about.contact_form')}</Button>
 		</section>
 	</article>
 </main>

@@ -7,7 +7,7 @@
 	export let data;
 	$: deaths.set(data.props.deathsData);
 	$: deathsToShow = getRandomSubset($deaths, 30);
-	let totalDeathEstimate = 19667;
+	let totalDeathEstimate = 20000;
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
 	<meta name="description" content={$_('site.long_description')} />
 </svelte:head>
 
-<h1><span class="arabic">ريثما</span><br />{$_('site.title')}</h1>
+<h1><span class="arabic">ريثما</span><br />Until</h1>
 <p class="subtitle">
 	{$_('site.description')}
 </p>
@@ -35,7 +35,7 @@
 				of the
 				<span class="highlight">{new Intl.NumberFormat().format(totalDeathEstimate)}</span> killed. -->
 			</p>
-			<p class="deaths-list">
+			<p class="deaths-list" dir="ltr">
 				{#each deathsToShow as death, index}
 				<a href={`${$locale}/database/${toKebabCase(death.name_en)}`}>
 					<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
@@ -53,15 +53,17 @@
 			</p>
 			<ol>
 				<li>
-					{$_('contributing.way1')}
+					{$_('contributing.sources')}
 					<!-- <span class="focus">Submit sources</span>: Use the
 					<a href="https://wjtikx0v.nocodb.com/#/nc/form/5fd4112d-b5d0-487d-aaa2-9559710858c6"
 						>source submission form</a
 					> to share sources (e.g. news articles, social media updates). These will be integrated into
 					the database. -->
+					<Button href={$_('form.source')}></Button>
 				</li>
+				<li>{$_('contributing.testimonial')}<Button href={$_('form.testimonial')}></Button></li>
 				<li>
-					{$_('contributing.way2')}
+					{$_('contributing.share')}
 					<!-- <span class="focus">Share</span>: To be useful, <span class="until">Until</span> needs to be
 					used. Please share it with your family, friends and representatives. -->
 				</li>
@@ -73,6 +75,7 @@
 					href="https://wjtikx0v.nocodb.com/#/nc/form/83775246-bd27-48f0-ba98-e604f9f5f79e"
 					>contribution form</a
 				>. -->
+				<Button href={$_('form.contact')}></Button>
 			</p>
 		</section>
 	</article>

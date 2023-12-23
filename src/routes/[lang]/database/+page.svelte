@@ -34,6 +34,9 @@
 	<article>
 		<section>
 			<h1><span class="arabic">ريثما</span><br />{$_('database.title')}</h1>
+			<p class="subtitle">
+				{$_('database.subtitle')}
+			</p>
 			<div class="search-container">
 				<input
 					type="text"
@@ -42,7 +45,7 @@
 					on:input={filterDeaths}
 				/>
 			</div>
-			<p class="deaths-list">
+			<p class="deaths-list" dir="ltr">
 				{#each filteredDeaths as death, index}
 					<a href={`database/${toKebabCase(death.name_en)}`}>
 						<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
