@@ -7,7 +7,7 @@
 	export let data;
 	$: deaths.set(data.props.deathsData);
 	$: deathsToShow = getRandomSubset($deaths, 30);
-	let totalDeathEstimate = 19667;
+	let totalDeathEstimate = 20000;
 </script>
 
 <svelte:head>
