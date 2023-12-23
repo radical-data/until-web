@@ -8,10 +8,10 @@
 
 	let amOrPm = 'pm';
 
-	function toTimeFormat(date: Date, locale: string | null | undefined): string {
+	function toTimeFormat(date: Date, locale_data: any): string {
 		const hours = date.getHours();
 		const minutes = date.getMinutes();
-		amOrPm = hours >= 12 ? $_('utils.time_pm') : $_('utils.time_am');
+		amOrPm = hours >= 12 ? locale_data('utils.time_pm') : locale_data('utils.time_am');
 		const hourFormat = hours % 12 || 12;
 		const timeString = `${hourFormat}:${minutes.toString().padStart(2, '0')}${amOrPm}`;
 		return timeString;
@@ -23,7 +23,7 @@
 		<p>{$_('home.last_updated')}</p>
 		<p>
 			<time datetime={toISODateTimeString(lastUpdatedTime)}
-				>{toTimeFormat(lastUpdatedTime, $locale)}</time
+				>{toTimeFormat(lastUpdatedTime, $_)}</time
 			>
 		</p>
 	</div>
