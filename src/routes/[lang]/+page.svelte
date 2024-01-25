@@ -2,11 +2,10 @@
 	import Button from '$lib/Button.svelte';
 	import LastUpdated from '$lib/LastUpdated.svelte';
 	import { deaths } from '$lib/stores';
-	import { getRandomSubset, toKebabCase } from '$lib/utils';
 	import { _, locale } from 'svelte-i18n';
 	export let data;
-	$: deaths.set(data.props.deathsData);
-	$: deathsToShow = getRandomSubset($deaths, 30);
+	$: deaths.set(data.props.deaths);
+	$: deathsToShow = data.props.deathsSubset;
 	let totalDeathEstimate = 20258;
 </script>
 
@@ -44,7 +43,7 @@
 			</p>
 			<p class="deaths-list" dir="ltr">
 				{#each deathsToShow as death, index}
-				<a href={`${$locale}/database/${toKebabCase(death.name_en)}`}>
+				<a href={`${$locale}/database/${death.name_en}`}>
 					<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
 					>{index !== deathsToShow.length - 1 ? ' · ' : ''}
 				{/each}
