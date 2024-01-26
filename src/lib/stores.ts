@@ -5,6 +5,6 @@ export const term = writable('');
 export const filtered = derived(
     [deaths, term],
     (deaths, term) => {
-      return deaths.includes(term),
+      return deaths.includes(term);
 });
   
