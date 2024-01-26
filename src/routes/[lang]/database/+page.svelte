@@ -26,7 +26,7 @@
 			<div class="search-container">
 				<input
 					type="text"
-					bind:value={term}
+					bind:value={$term}
 					placeholder="{$_('database.search')}"
 				/>
 			</div>
