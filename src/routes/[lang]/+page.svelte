@@ -43,7 +43,7 @@
 			</p>
 			<p class="deaths-list" dir="ltr">
 				{#each deathsToShow as death, index}
-				<a href={`${$locale}/database/${death.name_en}`}>
+				<a href={`${$locale}/database/${death.modified_name}`}>
 					<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
 					>{index !== deathsToShow.length - 1 ? ' · ' : ''}
 				{/each}

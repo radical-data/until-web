@@ -39,7 +39,6 @@
     "@fontsource-variable/noto-sans-arabic": "^5.0.8",
     "@fontsource-variable/source-sans-3": "^5.0.18",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
-    "fuzzysort": "^2.0.4",
     "nocodb-sdk": "^0.202.10",
     "svelte-i18n": "^4.0.0",
     "svelte-sitemap": "^2.6.0"

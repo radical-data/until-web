@@ -1,15 +1,17 @@
 import { fetchDeathsData } from '$lib/fetchData';
-import { toKebabCase, getRandomSubset } from '$lib/utils';
+import { toKebabCase, getRandomSubset, capitaliseFirstLetter } from '$lib/utils';
 
 export async function load() {
     console.log("Fetching data...")
     const deathsData = await fetchDeathsData();
-    const deaths = deathsData.map(function(death){
+    const subsetDeaths = getRandomSubset(deathsData, 30).map(function(death){
+        death.modified_name = toKebabCase(death.name_en);
+        death.first_name = death.name_en.split(' ')[0];
+        death.gender = capitaliseFirstLetter(death.gender);
         return death;
-        // return toKebabCase(death.name_en);
     });
     console.log("Fetched")
     return {
-        props: { deaths: deaths, deathsSubset: getRandomSubset(deathsData, 30) }
+        props: { deaths: deathsData, deathsSubset: subsetDeaths }
     };
 }
