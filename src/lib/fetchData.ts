@@ -36,7 +36,7 @@ export async function fetchDeathsData() {
         allRows.push(...pageData);
     }
     
-    const result = allRows.map(function(death){
+    const result = allRows.map((death){
         death.modified_name = toKebabCase(death.name_en);
         death.first_name = death.name_en.split(' ')[0];
         death.gender = capitaliseFirstLetter(death.gender);
