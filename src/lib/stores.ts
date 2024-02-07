@@ -1,10 +1,8 @@
 import { writable, derived } from 'svelte/store';
+import { type Person } from '../models/person'
 
-export const deaths = writable([]) as any;
-export const term = writable('');
-export const filtered = derived(
-    [deaths, term],
-    (deaths, term) => {
-      return deaths.includes(term);
+export const deaths = writable<Person[]>([]);
+export const filter = writable('');
+export const filtered = derived([filter, deaths], ([$filter, $deaths]) => {
+    return $deaths.filter(x => x.name_en === $filter)
 });
-  

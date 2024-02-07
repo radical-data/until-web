@@ -1,6 +1,7 @@
 import { NOCODB_BASE } from "$env/static/private";
 import { nocodb_api } from "$lib/nocodb_api";
-import { getRandomSubset } from "./utils";
+import type { Person } from "../models/person";
+import { toKebabCase, getRandomSubset, capitaliseFirstLetter } from "./utils";
 
 async function fetchPage(page: number) {
     const options = {
@@ -34,7 +35,14 @@ export async function fetchDeathsData() {
         const pageData = await fetchPage(page);
         allRows.push(...pageData);
     }
+    
+    const result = allRows.map(function(death){
+        death.modified_name = toKebabCase(death.name_en);
+        death.first_name = death.name_en.split(' ')[0];
+        death.gender = capitaliseFirstLetter(death.gender);
+        return death;
+    });
 
-    const shuffledDeaths = getRandomSubset(allRows);
+    const shuffledDeaths = getRandomSubset(result);
     return shuffledDeaths;
 }
