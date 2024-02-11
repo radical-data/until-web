@@ -5,7 +5,7 @@
 
 <a {href}>
 	<slot />
-    <img src={arrow} alt="">
+	<img src={arrow} alt="" />
 </a>
 
 <style>
@@ -17,7 +17,7 @@
 		border: 1px solid #f4f4f4;
 		border-radius: 9999rem;
 		display: inline-flex;
-        text-decoration: none;
+		text-decoration: none;
 	}
 	img {
 		width: 26px;

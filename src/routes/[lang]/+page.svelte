@@ -34,8 +34,10 @@
 		<section>
 			<p class="statement">
 				{$_('home.statement', {
-					values: { number_in_database: new Intl.NumberFormat().format($deaths.length) ,
-					total_killed: new Intl.NumberFormat().format(totalDeathEstimate)}
+					values: {
+						number_in_database: new Intl.NumberFormat().format($deaths.length),
+						total_killed: new Intl.NumberFormat().format(totalDeathEstimate)
+					}
 				})}
 				<!-- <span class="highlight">Until</span> remembers
 				<span class="highlight">{new Intl.NumberFormat().format($deaths.length)}</span>
@@ -44,12 +46,15 @@
 			</p>
 			<p class="deaths-list" dir="ltr">
 				{#each deathsToShow as death, index}
-				<a href={`${$locale}/database/${toKebabCase(death.name_en)}`}>
-					<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
+					<a href={`${$locale}/database/${toKebabCase(death.name_en)}`}>
+						<span class="name">{death.name_en}</span>, <span class="age">{death.age}</span></a
 					>{index !== deathsToShow.length - 1 ? ' · ' : ''}
 				{/each}
 			</p>
-			<p class="invite">{$_('home.database_link_description')} <Button href={`${$locale}/database`}>{$_('home.database_link')}</Button></p>
+			<p class="invite">
+				{$_('home.database_link_description')}
+				<Button href={`${$locale}/database`}>{$_('home.database_link')}</Button>
+			</p>
 		</section>
 		<section>
 			<h2>{$_('about.contributing')}</h2>
