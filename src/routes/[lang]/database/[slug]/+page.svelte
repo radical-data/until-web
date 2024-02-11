@@ -20,11 +20,11 @@
 
 <h2>{$_('individual.testimonials')}</h2>
 <Button href={$_('form.testimonial')}
-	>{$_('individual.share_testimonial', { values: { name: first_name }})}</Button
+	>{$_('individual.share_testimonial', { values: { name: first_name } })}</Button
 >
 <h2>{$_('individual.photos')}</h2>
 <Button href={$_('form.photo')}
-	>{$_('individual.share_photo', { values: { name: first_name }})}</Button
+	>{$_('individual.share_photo', { values: { name: first_name } })}</Button
 >
 
 <style>

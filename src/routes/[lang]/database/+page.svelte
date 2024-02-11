@@ -24,10 +24,7 @@
 
 <svelte:head>
 	<title>{$_('pages.database')} · {$_('site.title')} · {$_('site.goal')}</title>
-	<meta
-		name="description"
-		content="{$_('database.description')}"
-	/>
+	<meta name="description" content={$_('database.description')} />
 </svelte:head>
 
 <main>
@@ -41,7 +38,7 @@
 				<input
 					type="text"
 					bind:value={searchQuery}
-					placeholder="{$_('database.search')}"
+					placeholder={$_('database.search')}
 					on:input={filterDeaths}
 				/>
 			</div>
