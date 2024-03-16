@@ -1,10 +1,12 @@
 import { fetchDeathsData } from '$lib/fetchData';
+import { getRandomSubset } from '$lib/utils';
 
 export async function load() {
-    console.log("Fetching data...")
+    console.log("Fetching data...");
     const deathsData = await fetchDeathsData();
-    console.log("Fetched")
+    const subsetDeaths = getRandomSubset(deathsData, 30);
+    console.log("Fetched");
     return {
-        props: { deathsData }
+        props: { deaths: deathsData, deathsSubset: subsetDeaths }
     };
 }

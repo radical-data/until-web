@@ -14,7 +14,9 @@
 		await waitLocale();
 	};
 	import { page } from '$app/stores';
-	$: $page.params.lang && locale.set($page.params.lang);
+	$: if (browser) {
+		$page.params.lang && locale.set($page.params.lang);
+	}
 </script>
 
 <PlausibleAnalytics domain={'until.radicaldata.org'}></PlausibleAnalytics>
