@@ -6,7 +6,7 @@
 	export let data;
 	$: deaths.set(data.props.deaths);
 	$: deathsToShow = data.props.deathsSubset;
-	let totalDeathEstimate = 20258;
+	let totalDeathEstimate = data.props.totalDeaths;
 </script>
 
 <svelte:head>

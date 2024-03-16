@@ -45,3 +45,18 @@ export async function fetchDeathsData() {
     const shuffledDeaths = getRandomSubset(result);
     return shuffledDeaths;
 }
+
+export async function getMostRecentTotalDeaths() {
+    try {
+        const response = await nocodb_api.dbTableRow.list('noco', NOCODB_BASE, 'Totals', { limit: 0 });
+        if (response.list && response.list.length > 0) {
+            const sortedData = response.list.sort((a, b) => new Date(b.date_published) - new Date(a.date_published));
+            return sortedData[0].total_deaths;
+        } else {
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching the most recent total deaths:', error);
+        return null;
+    }
+}
